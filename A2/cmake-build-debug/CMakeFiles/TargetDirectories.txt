@@ -1,0 +1,3 @@
+/home/khalil/Desktop/courses/Analysis/A2/cmake-build-debug/CMakeFiles/A2.dir
+/home/khalil/Desktop/courses/Analysis/A2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/khalil/Desktop/courses/Analysis/A2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
