@@ -1,58 +1,66 @@
 #include <iostream>
-using namespace std;
+#include "string"
 #include "vector"
+using namespace std;
 
-struct result{
-    int i;
-    int e;
-    int max;
-
-};
-
-result maxList(vector<int> data);
-void testMaxList(vector<vector<int>> testData);
-
+string graphTopology(vector<vector<bool>> boolMatrix);
 
 int main() {
-    vector<vector<int>> testData;
-    testData.push_back({-2,11,-4,13,-5,-2});
-    testData.push_back({1, -3, 4, -2, -1, 6});
-    testData.push_back({5, -7, 3, 5, -2, 6, -1});
+    vector<vector<bool>> test1 = {{false, false, true},
+                                  {true, false, true},
+                                  {true, true, false}};
 
-    testMaxList(testData); //this is a function that will run all test cases.
+    cout<<graphTopology(test1);
     return 0;
 }
 
-result maxList(vector<int> data){
-    int e,i,sum,sumMax;
-    sumMax = data.at(0);
-    e = 0;
-    i = 0;
+string graphTopology(vector<vector<bool>> boolMatrix){
 
-    for(int k = 0; k<data.size();k++){
-        sum = 0;
-        for(int j = k; j<data.size();j++){
-            sum = sum + data.at(j);
-            if(sum>sumMax){
-                sumMax = sum;
-                i = k;
-                e = j;
+    int rows = boolMatrix.size();
+    int cols = boolMatrix.at(0).size();
+
+    //Check for Fully Connected
+    bool fullyConnected = true;
+    int i = 0;
+
+    while(i<rows && fullyConnected){
+        int j = 0;
+        while (j<cols && fullyConnected){
+            if(!boolMatrix.at(i).at(j) && j != i){ //assuming that a node cannot be fiend with itself.
+                fullyConnected = false;
             }
-        };
-    };
-    result r;
-    r.max = sumMax;
-    r.e = e+1; // +1 because the result start from 1 the index
-    r.i = i+1;
-    return r;
-};
+            j++;
+        }
+        i++;
+    }
+    if(fullyConnected){return "Fully Connected";};
 
-void testMaxList(vector<vector<int>> testData){
-    cout<<"Starting the test for the Max Function"<<endl;
-    for(int l = 0; l<testData.size();l++){
-        cout<<"Result for test data number "<<l+1<<":"<<endl;
-        result r = maxList(testData.at(l));
-        cout<<"Max Value: "<<r.max<<endl;
-        cout<<"i = "<<r.i<<" to "<<"e = "<<r.e<<endl;
+    //Check for Star Topology
+    bool startTopology = true;
+    for(int i = 0; i<rows; i++){
+        for(int j = 0; j<cols;j++){
+            if(boolMatrix.at(i).at(j) == true){ //if a node is connected to another node
+
+            }
+        }
+    }
+
+    //Check for Ring Topology
+    bool ringTopology = true;
+    for(int i = 0; i<rows; i++){
+        for(int j = 0; j<cols; j++){
+            if(i%2 == j%2 && boolMatrix.at(i).at(j) != false){
+                ringTopology = false;
+                break;
+            }else if(boolMatrix.at(i).at(j) != true){
+                ringTopology = false;
+                break;
+            };
+        };
+        if(!ringTopology){break;};
     };
+    if(ringTopology){return "Ring Topology";};
+
+    return "mo";
+
 }
