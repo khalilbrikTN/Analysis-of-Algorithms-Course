@@ -1,51 +1,29 @@
-#include <iostream>
 #include <algorithm>
-#include <limits.h>
-
-#include "vector"
-
+#include <iostream>
+#include <vector>
+#include "limits.h"
 using namespace std;
 
 
-void get_optimal_splitHelper(const vector<vector<int>>& optimal_split, int i, int j, char& matrix_name);
-void get_optimal_split(const vector<vector<int>>& optimal_split, int num_matrices);
-
-
-void printMatrix(const vector<vector<int>>& matrix) {
-    int rows = matrix.size();
-    if (rows == 0) {
-        cout << "Matrix is empty" << endl;
-        return;
-    }
-    int cols = matrix[0].size();
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            cout << matrix[i][j] << "\t";
-        }
-        cout << endl;
-    }
-}
-
 vector<vector<int>> get_optimal_split(vector<int> d, int n);
-void printOptimalSplit(const vector<vector<int>>& S, int i, int j);
+string print_optimal(const vector<vector<int>>& k, int i, int j);
+
+
+//A Function I use to print any matrix of any size.
+void printMatrix(const vector<vector<int>>& matrix);
+
+
 
 
 int main() {
-    /*
-    vector<int> d = { 40, 20, 30, 10, 30 };
+
+    vector<int> d = { 4, 4, 6, 12, 7 };
     int n = d.size()-1;
-    vector<vector<int>> S = get_optimal_split(d,n);
-    printMatrix(S);*/
+    vector<vector<int>> K = get_optimal_split(d,n);
+    printMatrix(K);
 
-
-    vector<vector<int>> optimal_split = {
-            {0, 1, 1, 3},
-            {0, 0, 2, 3},
-            {0, 0, 0, 3},
-            {0, 0, 0, 0}
-    };
-    int num_matrices = 4;
-    get_optimal_split(optimal_split, num_matrices);
+    string expression = print_optimal(K, 1, n);
+    cout << "Optimal expression: " << expression << endl;
 
     return 0;
 }
@@ -75,22 +53,31 @@ vector<vector<int>> get_optimal_split(vector<int> d, int n){
     return S;
 };
 
-// Function to print optimal parenthesization
-void get_optimal_splitHelper(const vector<vector<int>>& optimal_split, int i, int j, char& matrix_name) {
+
+string print_optimal(const vector<vector<int>>& k, int i, int j) {
     if (i == j) {
-        cout << matrix_name++;
-        return;
+        return "A_" + to_string(i + 1); // Base case: single matrix
     }
-    cout << "(";
-    get_optimal_splitHelper(optimal_split, i, optimal_split[i][j], matrix_name);
-    get_optimal_splitHelper(optimal_split, optimal_split[i][j] + 1, j, matrix_name);
-    cout << ")";
+
+    int min_k = k[i][j];
+    string expr1 = print_optimal(k, i, min_k);
+    string expr2 = print_optimal(k, min_k + 1, j);
+    return "(" + expr1 + " * " + expr2 + ")"; // Combine expressions with parentheses
 }
 
-void get_optimal_split(const vector<vector<int>>& optimal_split, int num_matrices) {
-    char matrix_name = 'A';
-    cout << "Optimal Parenthesization: ";
-    get_optimal_splitHelper(optimal_split, 0, num_matrices - 1, matrix_name);
-    cout << endl;
+void printMatrix(const vector<vector<int>>& matrix) {
+    int rows = matrix.size();
+    if (rows == 0) {
+        cout << "Matrix is empty" << endl;
+        return;
+    }
+    int cols = matrix[0].size();
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
+    }
 }
+
 
