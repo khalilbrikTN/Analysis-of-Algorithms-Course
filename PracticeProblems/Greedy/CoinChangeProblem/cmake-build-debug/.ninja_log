@@ -1,0 +1,23 @@
+# ninja log v5
+0	345	1711136296023025365	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+345	391	1711136296066358939	CoinChangeProblem	ec5cbabf5711bd86
+1	341	1711136377940176573	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+341	389	1711136377986843531	CoinChangeProblem	ec5cbabf5711bd86
+1	287	1711136522687823240	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+287	336	1711136522734490245	CoinChangeProblem	ec5cbabf5711bd86
+0	338	1711136603031756396	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+338	388	1711136603081756780	CoinChangeProblem	ec5cbabf5711bd86
+1	423	1711136688163507890	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+423	471	1711136688210172037	CoinChangeProblem	ec5cbabf5711bd86
+1	431	1711136833033406582	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+431	480	1711136833080071382	CoinChangeProblem	ec5cbabf5711bd86
+0	425	1711136925773363887	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+425	475	1711136925823362238	CoinChangeProblem	ec5cbabf5711bd86
+0	424	1711136973171877177	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+425	473	1711136973218542453	CoinChangeProblem	ec5cbabf5711bd86
+0	429	1711137059812852932	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+429	477	1711137059859518443	CoinChangeProblem	ec5cbabf5711bd86
+0	433	1711137123648044429	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+433	481	1711137123698043352	CoinChangeProblem	ec5cbabf5711bd86
+0	428	1711137142227652411	CMakeFiles/CoinChangeProblem.dir/main.cpp.o	ed851f2bf74414ec
+428	477	1711137142274318113	CoinChangeProblem	ec5cbabf5711bd86

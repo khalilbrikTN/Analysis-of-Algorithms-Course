@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CoinChangeProblem",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CoinChangeProblem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CoinChangeProblem-Debug-5251ab4b6c79c3cf4b52.json",
+					"name" : "CoinChangeProblem",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/khalil/Desktop/courses/Analysis/rEPO/Analysis-of-Algorithms-Course/PracticeProblems/CoinChangeProblem/cmake-build-debug",
+		"source" : "/home/khalil/Desktop/courses/Analysis/rEPO/Analysis-of-Algorithms-Course/PracticeProblems/CoinChangeProblem"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
