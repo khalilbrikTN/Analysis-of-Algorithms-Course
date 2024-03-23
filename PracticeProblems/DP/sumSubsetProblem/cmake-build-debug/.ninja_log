@@ -1,0 +1,11 @@
+# ninja log v5
+0	635	1711227407913239878	CMakeFiles/sumSubsetProblem.dir/main.cpp.o	d133c7914fac2d7a
+635	721	1711227407999904451	sumSubsetProblem	7d8abecb751f26ac
+1	613	1711227416296370737	CMakeFiles/sumSubsetProblem.dir/main.cpp.o	d133c7914fac2d7a
+613	702	1711227416386368564	sumSubsetProblem	7d8abecb751f26ac
+1	635	1711227422089564184	CMakeFiles/sumSubsetProblem.dir/main.cpp.o	d133c7914fac2d7a
+635	720	1711227422172895505	sumSubsetProblem	7d8abecb751f26ac
+1	614	1711227837569587759	CMakeFiles/sumSubsetProblem.dir/main.cpp.o	d133c7914fac2d7a
+614	704	1711227837656252353	sumSubsetProblem	7d8abecb751f26ac
+1	629	1711228029701666326	CMakeFiles/sumSubsetProblem.dir/main.cpp.o	d133c7914fac2d7a
+629	708	1711228029781664418	sumSubsetProblem	7d8abecb751f26ac
