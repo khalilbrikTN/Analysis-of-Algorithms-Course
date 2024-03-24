@@ -12,29 +12,10 @@ struct dim{
 
 long long int gridTravelerNODP(int m, int n, long long int count);
 long long int gridTravelerMemo(int m, int n, long long int count, vector<dim> history);
-int gridTravelTabulation(int m, int n, vector<vector<int>> T){
+int gridTravelTabulation(int m, int n, vector<vector<int>> T);
 
 
-    T = vector<vector<int> >(n, vector<int>(m));
-
-    for(int i = 0; i<m; i++){
-        T[0][i] = 1;
-    };
-    for(int i = 0; i<n; i++){
-        T[i][0] = 1;
-    };
-
-    for(int i = 1; i<n; i++){
-        for (int j = 1; j < m; j++) {
-            T[i][j] = T[i][j-1] + T[i-1][j];
-        };
-    };
-
-    return T[n-1][m-1];
-}
-
-
-
+void printVectorOfVectors(const std::vector<std::vector<int>>& vec);
 int findInVector(vector<dim> history, dim d); //Find the index of a dim in history if m and n are found.
 
 int main() {
@@ -92,6 +73,28 @@ long long int gridTravelerMemo(int m, int n, long long int count, vector<dim> hi
     }
 }
 
+
+int gridTravelTabulation(int m, int n, vector<vector<int>> T){
+
+
+    T = vector<vector<int> >(n, vector<int>(m));
+
+    for(int i = 0; i<m; i++){
+        T[0][i] = 1;
+    };
+    for(int i = 0; i<n; i++){
+        T[i][0] = 1;
+    };
+
+    for(int i = 1; i<n; i++){
+        for (int j = 1; j < m; j++) {
+            T[i][j] = T[i][j-1] + T[i-1][j];
+        };
+    };
+
+    printVectorOfVectors(T);
+    return T[n-1][m-1];
+}
 int findInVector(vector<dim> history, dim d){
 
     for(int i = 0; i<history.size(); i++){
@@ -100,4 +103,15 @@ int findInVector(vector<dim> history, dim d){
         }
     }
     return -1;
+}
+
+
+
+void printVectorOfVectors(const std::vector<std::vector<int>>& vec) {
+    for (const auto& innerVec : vec) {
+        for (int element : innerVec) {
+            std::cout << element << " ";
+        }
+        std::cout << std::endl;
+    }
 }
